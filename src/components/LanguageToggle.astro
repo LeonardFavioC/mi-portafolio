@@ -1,0 +1,78 @@
+---
+---
+
+<button
+  id="language-toggle"
+  class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors flex items-center gap-2"
+  aria-label="Toggle language"
+  title="Cambiar idioma / Switch language"
+>
+  <span class="text-sm font-semibold text-gray-700 dark:text-gray-300" id="current-lang">ES</span>
+  <svg class="w-5 h-5 text-gray-700 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path>
+  </svg>
+</button>
+
+<script>
+  import { translations, type Language } from "../i18n/translations";
+
+  function initLanguageToggle() {
+    const toggleBtn = document.getElementById("language-toggle");
+    const currentLangEl = document.getElementById("current-lang");
+
+    // Get saved language or default to Spanish
+    const savedLang = (localStorage.getItem("language") as Language) || "es";
+    setLanguage(savedLang);
+
+    toggleBtn?.addEventListener("click", () => {
+      const currentLang = (localStorage.getItem("language") as Language) || "es";
+      const newLang: Language = currentLang === "es" ? "en" : "es";
+      setLanguage(newLang);
+      localStorage.setItem("language", newLang);
+    });
+
+    function setLanguage(lang: Language) {
+      const t = translations[lang];
+
+      // Update language indicator
+      if (currentLangEl) {
+        currentLangEl.textContent = lang.toUpperCase();
+      }
+
+      // Update document lang attribute
+      document.documentElement.lang = lang === "es" ? "es" : "en";
+
+      // Update all translatable elements
+      document.querySelectorAll("[data-i18n]").forEach((el) => {
+        const key = el.getAttribute("data-i18n");
+        if (key) {
+          const translation = getNestedTranslation(t, key);
+          if (translation) {
+            if (el.hasAttribute("data-i18n-html")) {
+              el.innerHTML = translation;
+            } else {
+              el.textContent = translation;
+            }
+          }
+        }
+      });
+
+      // Update placeholders
+      document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
+        const key = el.getAttribute("data-i18n-placeholder");
+        if (key) {
+          const translation = getNestedTranslation(t, key);
+          if (translation && el instanceof HTMLInputElement || el instanceof HTMLTextAreaElement) {
+            el.placeholder = translation;
+          }
+        }
+      });
+    }
+
+    function getNestedTranslation(obj: any, path: string): string | null {
+      return path.split(".").reduce((current, key) => current?.[key], obj);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", initLanguageToggle);
+</script>

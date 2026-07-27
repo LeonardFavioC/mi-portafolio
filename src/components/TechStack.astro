@@ -1,0 +1,259 @@
+---
+const techCategories = [
+  {
+    key: "frontend",
+    title: "Frontend",
+    icon: "🎨",
+    color: "blue",
+    technologies: [
+      "React",
+      "Angular",
+      "Flutter",
+      "Ionic",
+      "Astro",
+      "Next.js",
+      "Tailwind CSS",
+      "Bootstrap",
+      "Material UI",
+      "Ant Design",
+    ],
+  },
+  {
+    key: "backend",
+    title: "Backend",
+    icon: "⚙️",
+    color: "green",
+    technologies: [
+      "Node.js",
+      "Express",
+      "NestJS",
+      "Go",
+      "Python",
+      "GraphQL",
+      "REST API",
+      "Microservices",
+    ],
+  },
+  {
+    key: "devops",
+    title: "Databases & DevOps",
+    icon: "🗄️",
+    color: "purple",
+    technologies: [
+      "MongoDB",
+      "PostgreSQL",
+      "MySQL",
+      "Redis",
+      "Docker",
+      "Kubernetes",
+      "AWS",
+      "CI/CD",
+    ],
+  },
+  {
+    key: "ai",
+    title: "IA & Productividad",
+    icon: "🤖",
+    color: "yellow",
+    technologies: [
+      "Claude Code",
+      "Cursor",
+      "GitHub Copilot",
+      "ChatGPT",
+      "AI-Assisted Development",
+    ],
+  },
+];
+
+const colorClasses = {
+  blue: {
+    bg: "bg-blue-100 dark:bg-blue-900/20",
+    text: "text-blue-700 dark:text-blue-300",
+    border: "border-blue-200 dark:border-blue-800",
+    iconBg: "bg-blue-500",
+  },
+  green: {
+    bg: "bg-green-100 dark:bg-green-900/20",
+    text: "text-green-700 dark:text-green-300",
+    border: "border-green-200 dark:border-green-800",
+    iconBg: "bg-green-500",
+  },
+  purple: {
+    bg: "bg-purple-100 dark:bg-purple-900/20",
+    text: "text-purple-700 dark:text-purple-300",
+    border: "border-purple-200 dark:border-purple-800",
+    iconBg: "bg-purple-500",
+  },
+  yellow: {
+    bg: "bg-yellow-100 dark:bg-yellow-900/20",
+    text: "text-yellow-700 dark:text-yellow-300",
+    border: "border-yellow-200 dark:border-yellow-800",
+    iconBg: "bg-yellow-500",
+  },
+};
+---
+
+<section id="tech-stack" class="py-20 px-4 bg-gray-50 dark:bg-gray-800/50">
+  <div class="max-w-7xl mx-auto">
+    <!-- Header -->
+    <div class="text-center mb-16 animate-fadeInUp">
+      <div
+        class="inline-flex items-center gap-2 px-4 py-2 mb-4 bg-purple-100 dark:bg-purple-900/30 rounded-full"
+      >
+        <svg
+          class="w-5 h-5 text-purple-600 dark:text-purple-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+        </svg>
+        <span
+          class="text-sm font-semibold text-purple-700 dark:text-purple-300"
+          data-i18n="techStack.badge"
+          >Tech Stack</span
+        >
+      </div>
+
+      <h2
+        class="text-3xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white"
+        data-i18n="techStack.title"
+      >
+        Tecnologías de Vanguardia
+      </h2>
+      <p class="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto" data-i18n="techStack.subtitle">
+        Herramientas modernas y probadas para construir soluciones robustas y
+        escalables
+      </p>
+    </div>
+
+    <!-- Tech Categories Grid -->
+    <div class="grid md:grid-cols-2 gap-8">
+      {
+        techCategories.map((category) => {
+          const colors = colorClasses[category.color];
+          return (
+            <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+              {/* Category Header */}
+              <div class="flex items-center gap-4 mb-6">
+                <div
+                  class={`w-12 h-12 ${colors.iconBg} rounded-xl flex items-center justify-center text-2xl shadow-lg`}
+                >
+                  {category.icon}
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 dark:text-white" data-i18n={`techStack.categories.${category.key}`}>
+                  {category.title}
+                </h3>
+              </div>
+
+              {/* Technologies Pills */}
+              <div class="flex flex-wrap gap-2">
+                {category.technologies.map((tech) => (
+                  <span
+                    class={`inline-flex items-center px-4 py-2 ${colors.bg} ${colors.text} ${colors.border} border rounded-full text-sm font-medium transition-all hover:scale-105 hover:shadow-md`}
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+          );
+        })
+      }
+    </div>
+
+    <!-- AI Advantage Banner -->
+    <div
+      class="mt-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 md:p-12 text-white relative overflow-hidden"
+    >
+      <div class="absolute top-0 right-0 opacity-10">
+        <svg
+          class="w-64 h-64"
+          fill="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M13 10V3L4 14h7v7l9-11h-7z"
+          ></path>
+        </svg>
+      </div>
+
+      <div class="relative z-10">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="text-4xl">⚡</span>
+          <h3 class="text-2xl md:text-3xl font-bold" data-i18n="techStack.advantage.title">
+            Ventaja Competitiva con IA
+          </h3>
+        </div>
+
+        <p class="text-lg text-blue-100 mb-6 max-w-3xl" data-i18n="techStack.advantage.desc">
+          Utilizo herramientas de IA de última generación para acelerar el
+          desarrollo sin comprometer la calidad. Esto se traduce en:
+        </p>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="flex items-start gap-3">
+            <svg
+              class="w-6 h-6 flex-shrink-0 text-green-300"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clip-rule="evenodd"></path>
+            </svg>
+            <div>
+              <h4 class="font-bold mb-1" data-i18n="techStack.advantage.benefits.fast.title">Desarrollo 70% más rápido</h4>
+              <p class="text-sm text-blue-100" data-i18n="techStack.advantage.benefits.fast.desc">
+                Menos tiempo de espera, entregas más rápidas
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3">
+            <svg
+              class="w-6 h-6 flex-shrink-0 text-green-300"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clip-rule="evenodd"></path>
+            </svg>
+            <div>
+              <h4 class="font-bold mb-1" data-i18n="techStack.advantage.benefits.errors.title">Menos errores</h4>
+              <p class="text-sm text-blue-100" data-i18n="techStack.advantage.benefits.errors.desc">
+                Código más limpio con validaciones automáticas
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3">
+            <svg
+              class="w-6 h-6 flex-shrink-0 text-green-300"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clip-rule="evenodd"></path>
+            </svg>
+            <div>
+              <h4 class="font-bold mb-1" data-i18n="techStack.advantage.benefits.cost.title">Ahorro de costos</h4>
+              <p class="text-sm text-blue-100" data-i18n="techStack.advantage.benefits.cost.desc">
+                Precios más competitivos sin sacrificar calidad
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

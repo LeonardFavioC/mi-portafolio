@@ -1,0 +1,242 @@
+---
+const whatsappMessage = encodeURIComponent(
+  "Hola Leonardo! Me interesa conocer más sobre tus servicios de desarrollo web."
+);
+const whatsappLink = `https://wa.me/593983886370?text=${whatsappMessage}`;
+
+const services = [
+  {
+    key: "landing",
+    title: "Landing Page Express",
+    description: "Página única optimizada para conversión y captura de leads",
+    icon: "⚡",
+    features: [
+      "Diseño moderno y responsive",
+      "Formulario de contacto integrado",
+      "Optimización SEO básica",
+      "Tiempo de carga ultra rápido (<1s)",
+      "Integración con WhatsApp",
+      "Hosting por 1 año incluido",
+    ],
+    ideal: "Ideal para emprendedores, freelancers y eventos",
+    cta: "Desde $199",
+    highlight: false,
+  },
+  {
+    key: "corporate",
+    title: "Sitio Corporativo Pro",
+    description: "Web profesional multi-página para empresas y negocios",
+    icon: "🚀",
+    features: [
+      "Hasta 5 páginas personalizadas",
+      "Diseño profesional a medida",
+      "SEO avanzado y Analytics",
+      "Blog/Noticias (opcional)",
+      "Formularios avanzados",
+      "Panel de administración CMS",
+      "Mantenimiento 3 meses gratis",
+    ],
+    ideal: "Ideal para PYMES, profesionales y startups",
+    cta: "Desde $499",
+    highlight: true,
+  },
+  {
+    key: "custom",
+    title: "Desarrollo a Medida",
+    description: "Soluciones web y móvil personalizadas para tu negocio",
+    icon: "💎",
+    features: [
+      "Aplicaciones web complejas",
+      "Apps móviles (iOS/Android)",
+      "Integración de APIs",
+      "Dashboards y paneles admin",
+      "E-commerce personalizado",
+      "Consultoría técnica incluida",
+      "Soporte técnico extendido",
+    ],
+    ideal: "Ideal para proyectos empresariales complejos",
+    cta: "Cotización personalizada",
+    highlight: false,
+  },
+];
+---
+
+<section id="servicios" class="py-20 px-4 bg-white dark:bg-gray-900">
+  <div class="max-w-7xl mx-auto">
+    <!-- Header -->
+    <div class="text-center mb-16 animate-fadeInUp">
+      <div
+        class="inline-flex items-center gap-2 px-4 py-2 mb-4 bg-blue-100 dark:bg-blue-900/30 rounded-full"
+      >
+        <svg
+          class="w-5 h-5 text-blue-600 dark:text-blue-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+          ></path>
+        </svg>
+        <span class="text-sm font-semibold text-blue-700 dark:text-blue-300" data-i18n="services.badge"
+          >Servicios y Tarifas</span
+        >
+      </div>
+
+      <h2
+        class="text-3xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white"
+        data-i18n="services.title"
+      >
+        Soluciones Web para Cada Necesidad
+      </h2>
+      <p class="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto" data-i18n="services.subtitle">
+        Precios transparentes, sin sorpresas. Calidad profesional al alcance de
+        tu presupuesto.
+      </p>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="grid md:grid-cols-3 gap-8 mb-12">
+      {
+        services.map((service) => (
+          <div
+            class={`relative flex flex-col p-8 rounded-2xl shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 ${
+              service.highlight
+                ? "bg-gradient-to-br from-blue-600 to-purple-600 text-white ring-4 ring-blue-500/50"
+                : "bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700"
+            }`}
+          >
+            {service.highlight && (
+              <div class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-yellow-400 text-gray-900 text-sm font-bold rounded-full shadow-lg" data-i18n="services.popular">
+                ⭐ MÁS POPULAR
+              </div>
+            )}
+
+            {/* Icon */}
+            <div class="text-5xl mb-4">{service.icon}</div>
+
+            {/* Title & Description */}
+            <h3
+              class={`text-2xl font-bold mb-2 ${service.highlight ? "text-white" : "text-gray-900 dark:text-white"}`}
+              data-i18n={`services.${service.key}.title`}
+            >
+              {service.title}
+            </h3>
+            <p
+              class={`mb-6 ${service.highlight ? "text-blue-100" : "text-gray-600 dark:text-gray-400"}`}
+              data-i18n={`services.${service.key}.desc`}
+            >
+              {service.description}
+            </p>
+
+            {/* Features */}
+            <ul class="space-y-3 mb-8 flex-grow">
+              {service.features.map((feature, index) => (
+                <li class="flex items-start gap-2">
+                  <svg
+                    class={`w-5 h-5 flex-shrink-0 mt-0.5 ${service.highlight ? "text-green-300" : "text-green-500"}`}
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  <span
+                    class={`text-sm ${service.highlight ? "text-white" : "text-gray-700 dark:text-gray-300"}`}
+                    data-i18n={`services.${service.key}.features.${index}`}
+                  >
+                    {feature}
+                  </span>
+                </li>
+              ))}
+            </ul>
+
+            {/* Ideal para */}
+            <div
+              class={`mb-6 p-3 rounded-lg ${service.highlight ? "bg-white/10" : "bg-gray-50 dark:bg-gray-700/50"}`}
+            >
+              <p
+                class={`text-sm font-medium ${service.highlight ? "text-white" : "text-gray-700 dark:text-gray-300"}`}
+                data-i18n={`services.${service.key}.ideal`}
+              >
+                💡 {service.ideal}
+              </p>
+            </div>
+
+            {/* CTA */}
+            <div class="space-y-3">
+              <div
+                class={`text-3xl font-bold ${service.highlight ? "text-white" : "text-gray-900 dark:text-white"}`}
+                data-i18n={`services.${service.key}.price`}
+              >
+                {service.cta}
+              </div>
+              <a
+                href={whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                class={`block w-full text-center py-3 px-6 rounded-lg font-semibold transition-all duration-300 ${
+                  service.highlight
+                    ? "bg-white text-blue-600 hover:bg-gray-100"
+                    : "bg-blue-600 text-white hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600"
+                }`}
+              >
+                <span data-i18n="services.cta">Solicitar Cotización</span>
+              </a>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- Value Proposition Banner -->
+    <div
+      class="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8 md:p-12"
+    >
+      <div class="grid md:grid-cols-3 gap-8 text-center">
+        <div>
+          <div class="text-4xl mb-3">⚡</div>
+          <h4
+            class="text-lg font-bold mb-2 text-gray-900 dark:text-white"
+            data-i18n="services.value.fast.title"
+          >
+            Entrega Rápida
+          </h4>
+          <p class="text-sm text-gray-600 dark:text-gray-400" data-i18n="services.value.fast.desc">
+            Landing pages en 3-5 días. Sitios corporativos en 2-3 semanas.
+          </p>
+        </div>
+        <div>
+          <div class="text-4xl mb-3">💰</div>
+          <h4
+            class="text-lg font-bold mb-2 text-gray-900 dark:text-white"
+            data-i18n="services.value.price.title"
+          >
+            Precio Justo
+          </h4>
+          <p class="text-sm text-gray-600 dark:text-gray-400" data-i18n="services.value.price.desc">
+            Sin costos ocultos. Pago en cuotas disponible. Garantía incluida.
+          </p>
+        </div>
+        <div>
+          <div class="text-4xl mb-3">🎯</div>
+          <h4
+            class="text-lg font-bold mb-2 text-gray-900 dark:text-white"
+            data-i18n="services.value.quality.title"
+          >
+            Calidad Garantizada
+          </h4>
+          <p class="text-sm text-gray-600 dark:text-gray-400" data-i18n="services.value.quality.desc">
+            Código limpio, optimizado y mantenible. Soporte post-lanzamiento.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,87 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+}
+
+const {
+  title = "Leonardo Caraguay - Senior Software Engineer & Tech Lead",
+  description = "Desarrollo web ultra rápido y económico impulsado por IA. Senior Software Engineer con +7 años de experiencia creando soluciones digitales profesionales para tu negocio.",
+  image = "/og-image.jpg"
+} = Astro.props;
+
+const siteUrl = Astro.site?.toString() || "http://localhost:4321";
+const canonicalURL = new URL(Astro.url.pathname, siteUrl);
+const imageUrl = new URL(image, siteUrl);
+---
+
+<!doctype html>
+<html lang="es" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <link rel="apple-touch-icon" href="/logo.png" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- SEO Básico -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={imageUrl} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={imageUrl} />
+
+    <!-- Preconnect para fuentes si usamos Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Theme detection script (se ejecuta antes de renderizar) -->
+    <script is:inline>
+      const getTheme = () => {
+        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+          return localStorage.getItem('theme');
+        }
+        return 'dark'; // Default dark theme
+      };
+
+      const theme = getTheme();
+      document.documentElement.classList.toggle('dark', theme === 'dark');
+    </script>
+  </head>
+  <body class="antialiased">
+    <slot />
+
+    <!-- Theme toggle script -->
+    <script>
+      function initTheme() {
+        const themeToggleBtns = document.querySelectorAll('[data-theme-toggle]');
+
+        themeToggleBtns.forEach((btn) => {
+          btn.addEventListener('click', () => {
+            const isDark = document.documentElement.classList.toggle('dark');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+          });
+        });
+      }
+
+      document.addEventListener('DOMContentLoaded', initTheme);
+    </script>
+  </body>
+</html>
+
+<style>
+  @import '../styles/global.css';
+</style>
