@@ -112,7 +112,7 @@ Cada item es expandible para ver logros y tecnologías.
 Todos los enlaces están completamente funcionales:
 
 - **WhatsApp**: `https://wa.me/593983886370` (con mensaje predeterminado)
-- **Email**: `mailto:lcaraguayc@gmail.com`
+- **Email**: `mailto:lfcaraguayc@gmail.com`
 - **LinkedIn**: `https://www.linkedin.com/in/leonardo-caraguay-270893195`
 - **GitHub**: `https://github.com/LeonardFavioC`
 - **Scroll suave** entre secciones con IDs (#hero, #sobre-mi, #servicios, etc.)
@@ -250,7 +250,7 @@ Nueva versión con:
 ## 📞 Información de Contacto
 
 - **Nombre**: Leonardo Caraguay
-- **Email**: lcaraguayc@gmail.com
+- **Email**: lfcaraguayc@gmail.com
 - **WhatsApp**: +593 983886370
 - **LinkedIn**: leonardo-caraguay-270893195
 - **GitHub**: LeonardFavioC
