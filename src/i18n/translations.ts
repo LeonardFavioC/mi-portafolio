@@ -4,6 +4,7 @@ export const translations = {
     nav: {
       about: "Sobre Mí",
       services: "Servicios",
+      projects: "Proyectos & Tools",
       techStack: "Tech Stack",
       experience: "Experiencia",
       contact: "Contacto",
@@ -226,6 +227,62 @@ export const translations = {
       social: "Sígueme en",
       location: "Ubicación",
     },
+    // Projects & Tools
+    projects: {
+      badge: "Proyectos & Tools",
+      title: "Proyectos & Tools",
+      subtitle: "Explora nuestras aplicaciones móviles gratuitas y herramientas web diseñadas para resolver problemas reales.",
+      categoryMobile: "📱 Apps Móviles",
+      categoryWeb: "🌐 Apps Web",
+      autocare: {
+        title: "AutoCare — Asistente de Mantenimiento Vehicular",
+        badges: {
+          free: "Gratis",
+          offline: "100% Offline",
+          noSignup: "Sin Registro",
+        },
+        description: "Evita fallas costosas en tu vehículo. Calcula alertas inteligentes de kilometraje según el tipo de aceite (Mineral, Semisintético, Sintético) y encuentra talleres cercanos sin crear cuenta ni depender de internet.",
+        features: {
+          privacy: {
+            title: "🔒 Privacidad Total",
+            desc: "Los datos se guardan en tu teléfono. Sin cuentas obligatorias.",
+          },
+          viscosity: {
+            title: "🛢️ Asistente de Viscosidad",
+            desc: "Recomendaciones automáticas para 5W-30, 10W-40, etc., según el año y kilometraje de tu auto.",
+          },
+          latam: {
+            title: "🚘 Especial para LATAM",
+            desc: "Catálogo completo para Chevrolet, Toyota, Kia, Hyundai, Great Wall, Chery, Jetour, Suzuki y más.",
+          },
+        },
+        download: "Descargar Gratis para Android",
+        compatible: "Compatible con Android 8.0 o superior.",
+        installGuide: {
+          title: "Guía de Instalación en 4 Pasos Simples",
+          step1: {
+            title: "📥 Descarga el archivo",
+            desc: "Presiona el botón de descarga y confirma el archivo AutoCare.apk.",
+          },
+          step2: {
+            title: "⚙️ Otorga permisos",
+            desc: "Si tu navegador lo solicita, activa la opción 'Permitir desde esta fuente' o 'Instalar aplicaciones desconocidas'.",
+          },
+          step3: {
+            title: "📂 Abre el instalador",
+            desc: "Selecciona la notificación de descarga finalizada o busca el archivo en la carpeta Descargas.",
+          },
+          step4: {
+            title: "🚀 ¡Listo!",
+            desc: "Haz clic en 'Instalar' y abre la app. No requiere iniciar sesión.",
+          },
+        },
+      },
+      upcoming: {
+        title: "Próximamente",
+        calcFinance: "Calculadora Financiera Automotriz (Web App)",
+      },
+    },
     // Footer
     footer: {
       tagline: "Desarrollo web ultra rápido y económico impulsado por IA. Transformo ideas en realidad digital.",
@@ -245,6 +302,7 @@ export const translations = {
         landing: "Landing Page Express",
         corporate: "Sitio Corporativo Pro",
         custom: "Desarrollo a Medida",
+        projects: "Proyectos & Tools",
       },
     },
   },
@@ -253,6 +311,7 @@ export const translations = {
     nav: {
       about: "About Me",
       services: "Services",
+      projects: "Projects & Tools",
       techStack: "Tech Stack",
       experience: "Experience",
       contact: "Contact",
@@ -472,6 +531,62 @@ export const translations = {
       social: "Follow me on",
       location: "Location",
     },
+    // Projects & Tools
+    projects: {
+      badge: "Projects & Tools",
+      title: "Projects & Tools",
+      subtitle: "Explore our free mobile apps and web tools designed to solve real-world problems.",
+      categoryMobile: "📱 Mobile Apps",
+      categoryWeb: "🌐 Web Apps",
+      autocare: {
+        title: "AutoCare — Vehicle Maintenance Assistant",
+        badges: {
+          free: "Free",
+          offline: "100% Offline",
+          noSignup: "No Signup",
+        },
+        description: "Avoid costly vehicle breakdowns. Calculate smart mileage alerts based on oil type (Mineral, Semi-Synthetic, Synthetic) and find nearby workshops without creating an account or internet connection.",
+        features: {
+          privacy: {
+            title: "🔒 Total Privacy",
+            desc: "Data is stored on your phone. No mandatory accounts.",
+          },
+          viscosity: {
+            title: "🛢️ Viscosity Assistant",
+            desc: "Automatic recommendations for 5W-30, 10W-40, etc., based on your car's year and mileage.",
+          },
+          latam: {
+            title: "🚘 LATAM Focused",
+            desc: "Complete catalog for Chevrolet, Toyota, Kia, Hyundai, Great Wall, Chery, Jetour, Suzuki and more.",
+          },
+        },
+        download: "Download Free for Android",
+        compatible: "Compatible with Android 8.0 or higher.",
+        installGuide: {
+          title: "Installation Guide in 4 Simple Steps",
+          step1: {
+            title: "📥 Download the file",
+            desc: "Press the download button and confirm the AutoCare.apk file.",
+          },
+          step2: {
+            title: "⚙️ Grant permissions",
+            desc: "If your browser prompts, enable the 'Allow from this source' or 'Install unknown apps' option.",
+          },
+          step3: {
+            title: "📂 Open the installer",
+            desc: "Select the download complete notification or find the file in your Downloads folder.",
+          },
+          step4: {
+            title: "🚀 Ready!",
+            desc: "Click 'Install' and open the app. No login required.",
+          },
+        },
+      },
+      upcoming: {
+        title: "Coming Soon",
+        calcFinance: "Automotive Financial Calculator (Web App)",
+      },
+    },
     // Footer
     footer: {
       tagline: "Ultra-fast and affordable web development powered by AI. I transform ideas into digital reality.",
@@ -491,6 +606,7 @@ export const translations = {
         landing: "Express Landing Page",
         corporate: "Pro Corporate Site",
         custom: "Custom Development",
+        projects: "Projects & Tools",
       },
     },
   },

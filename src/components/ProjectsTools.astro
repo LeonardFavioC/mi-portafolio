@@ -1,0 +1,323 @@
+---
+// Get AutoCare APK file ID from environment variables
+const AUTOCARE_APK_FILE_ID = import.meta.env.PUBLIC_AUTOCARE_APK_FILE_ID || "";
+const downloadUrl = AUTOCARE_APK_FILE_ID
+  ? `https://drive.google.com/uc?export=download&id=${AUTOCARE_APK_FILE_ID}`
+  : "#";
+---
+
+<section
+  id="proyectos-tools"
+  class="py-20 px-4 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800"
+>
+  <div class="max-w-7xl mx-auto">
+    <!-- Header -->
+    <div class="text-center mb-16">
+      <div
+        class="inline-block px-4 py-2 bg-white dark:bg-gray-800 rounded-full border-2 border-[#B7092B] text-[#B7092B] font-semibold mb-4 shadow-sm"
+      >
+        <span data-i18n="projects.badge">Proyectos & Tools</span>
+      </div>
+      <h2
+        data-i18n="projects.title"
+        class="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white"
+      >
+        Proyectos & Tools
+      </h2>
+      <p
+        data-i18n="projects.subtitle"
+        class="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto"
+      >
+        Explora nuestras aplicaciones móviles gratuitas y herramientas web diseñadas para resolver problemas reales.
+      </p>
+    </div>
+
+    <!-- Category: Mobile Apps -->
+    <div class="mb-12">
+      <h3
+        data-i18n="projects.categoryMobile"
+        class="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2"
+      >
+        📱 Apps Móviles
+      </h3>
+
+      <!-- AutoCare Card -->
+      <div
+        class="bg-white dark:bg-gray-800 rounded-[18px] shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-200 dark:border-gray-700"
+      >
+        <div class="p-8 md:p-10">
+          <!-- Title & Badges -->
+          <div class="mb-6">
+            <h4
+              data-i18n="projects.autocare.title"
+              class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-3"
+            >
+              AutoCare — Asistente de Mantenimiento Vehicular
+            </h4>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="px-3 py-1 bg-[#B7092B]/10 text-[#B7092B] text-sm font-semibold rounded-full border border-[#B7092B]/30"
+              >
+                <span data-i18n="projects.autocare.badges.free">Gratis</span>
+              </span>
+              <span
+                class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-sm font-semibold rounded-full border border-green-300 dark:border-green-700"
+              >
+                <span data-i18n="projects.autocare.badges.offline">100% Offline</span>
+              </span>
+              <span
+                class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 text-sm font-semibold rounded-full border border-blue-300 dark:border-blue-700"
+              >
+                <span data-i18n="projects.autocare.badges.noSignup">Sin Registro</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Description -->
+          <p
+            data-i18n="projects.autocare.description"
+            class="text-gray-700 dark:text-gray-300 text-lg mb-8 leading-relaxed"
+          >
+            Evita fallas costosas en tu vehículo. Calcula alertas inteligentes de kilometraje según el tipo de aceite (Mineral, Semisintético, Sintético) y encuentra talleres cercanos sin crear cuenta ni depender de internet.
+          </p>
+
+          <!-- Key Features -->
+          <div class="grid md:grid-cols-3 gap-6 mb-8">
+            <div
+              class="bg-gray-50 dark:bg-gray-700/50 p-5 rounded-xl border border-gray-200 dark:border-gray-600"
+            >
+              <h5
+                data-i18n="projects.autocare.features.privacy.title"
+                class="font-bold text-gray-900 dark:text-white mb-2 text-lg"
+              >
+                🔒 Privacidad Total
+              </h5>
+              <p
+                data-i18n="projects.autocare.features.privacy.desc"
+                class="text-gray-600 dark:text-gray-400 text-sm"
+              >
+                Los datos se guardan en tu teléfono. Sin cuentas obligatorias.
+              </p>
+            </div>
+            <div
+              class="bg-gray-50 dark:bg-gray-700/50 p-5 rounded-xl border border-gray-200 dark:border-gray-600"
+            >
+              <h5
+                data-i18n="projects.autocare.features.viscosity.title"
+                class="font-bold text-gray-900 dark:text-white mb-2 text-lg"
+              >
+                🛢️ Asistente de Viscosidad
+              </h5>
+              <p
+                data-i18n="projects.autocare.features.viscosity.desc"
+                class="text-gray-600 dark:text-gray-400 text-sm"
+              >
+                Recomendaciones automáticas para 5W-30, 10W-40, etc., según el año y kilometraje de tu auto.
+              </p>
+            </div>
+            <div
+              class="bg-gray-50 dark:bg-gray-700/50 p-5 rounded-xl border border-gray-200 dark:border-gray-600"
+            >
+              <h5
+                data-i18n="projects.autocare.features.latam.title"
+                class="font-bold text-gray-900 dark:text-white mb-2 text-lg"
+              >
+                🚘 Especial para LATAM
+              </h5>
+              <p
+                data-i18n="projects.autocare.features.latam.desc"
+                class="text-gray-600 dark:text-gray-400 text-sm"
+              >
+                Catálogo completo para Chevrolet, Toyota, Kia, Hyundai, Great Wall, Chery, Jetour, Suzuki y más.
+              </p>
+            </div>
+          </div>
+
+          <!-- Download Button -->
+          <div class="mb-8">
+            <a
+              href={downloadUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-3 px-8 py-4 bg-[#B7092B] hover:bg-[#8f0722] text-white font-bold text-lg rounded-[24px] transition-all duration-300 transform hover:scale-105 shadow-[0_4px_20px_rgba(183,9,43,0.35)]"
+            >
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.1,22C7.79,22.05 6.8,20.68 5.96,19.47C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.1 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.44,15.65 20.06,16.66 20.09,16.67C20.06,16.74 19.67,18.11 18.71,19.5M13,3.5C13.73,2.67 14.94,2.04 15.94,2C16.07,3.17 15.6,4.35 14.9,5.19C14.21,6.04 13.07,6.7 11.95,6.61C11.8,5.46 12.36,4.26 13,3.5Z"
+                ></path>
+              </svg>
+              <span data-i18n="projects.autocare.download">Descargar Gratis para Android</span>
+            </a>
+            <p
+              data-i18n="projects.autocare.compatible"
+              class="text-sm text-gray-500 dark:text-gray-400 mt-3"
+            >
+              Compatible con Android 8.0 o superior.
+            </p>
+          </div>
+
+          <!-- Installation Guide (Collapsible) -->
+          <details
+            class="group bg-gray-50 dark:bg-gray-700/50 rounded-xl p-6 border border-gray-200 dark:border-gray-600"
+          >
+            <summary
+              class="cursor-pointer list-none flex items-center justify-between font-bold text-gray-900 dark:text-white text-lg select-none"
+            >
+              <span data-i18n="projects.autocare.installGuide.title"
+                >Guía de Instalación en 4 Pasos Simples</span
+              >
+              <svg
+                class="w-5 h-5 transition-transform group-open:rotate-180"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="mt-6 space-y-4">
+              <div class="flex gap-4">
+                <div
+                  class="flex-shrink-0 w-10 h-10 bg-[#B7092B] text-white rounded-full flex items-center justify-center font-bold"
+                >
+                  1
+                </div>
+                <div>
+                  <h6
+                    data-i18n="projects.autocare.installGuide.step1.title"
+                    class="font-bold text-gray-900 dark:text-white mb-1"
+                  >
+                    📥 Descarga el archivo
+                  </h6>
+                  <p
+                    data-i18n="projects.autocare.installGuide.step1.desc"
+                    class="text-gray-600 dark:text-gray-400 text-sm"
+                  >
+                    Presiona el botón de descarga y confirma el archivo AutoCare.apk.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex gap-4">
+                <div
+                  class="flex-shrink-0 w-10 h-10 bg-[#B7092B] text-white rounded-full flex items-center justify-center font-bold"
+                >
+                  2
+                </div>
+                <div>
+                  <h6
+                    data-i18n="projects.autocare.installGuide.step2.title"
+                    class="font-bold text-gray-900 dark:text-white mb-1"
+                  >
+                    ⚙️ Otorga permisos
+                  </h6>
+                  <p
+                    data-i18n="projects.autocare.installGuide.step2.desc"
+                    class="text-gray-600 dark:text-gray-400 text-sm"
+                  >
+                    Si tu navegador lo solicita, activa la opción 'Permitir desde esta fuente' o 'Instalar aplicaciones desconocidas'.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex gap-4">
+                <div
+                  class="flex-shrink-0 w-10 h-10 bg-[#B7092B] text-white rounded-full flex items-center justify-center font-bold"
+                >
+                  3
+                </div>
+                <div>
+                  <h6
+                    data-i18n="projects.autocare.installGuide.step3.title"
+                    class="font-bold text-gray-900 dark:text-white mb-1"
+                  >
+                    📂 Abre el instalador
+                  </h6>
+                  <p
+                    data-i18n="projects.autocare.installGuide.step3.desc"
+                    class="text-gray-600 dark:text-gray-400 text-sm"
+                  >
+                    Selecciona la notificación de descarga finalizada o busca el archivo en la carpeta Descargas.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex gap-4">
+                <div
+                  class="flex-shrink-0 w-10 h-10 bg-[#B7092B] text-white rounded-full flex items-center justify-center font-bold"
+                >
+                  4
+                </div>
+                <div>
+                  <h6
+                    data-i18n="projects.autocare.installGuide.step4.title"
+                    class="font-bold text-gray-900 dark:text-white mb-1"
+                  >
+                    🚀 ¡Listo!
+                  </h6>
+                  <p
+                    data-i18n="projects.autocare.installGuide.step4.desc"
+                    class="text-gray-600 dark:text-gray-400 text-sm"
+                  >
+                    Haz clic en 'Instalar' y abre la app. No requiere iniciar sesión.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+
+    <!-- Category: Web Apps -->
+    <div>
+      <h3
+        data-i18n="projects.categoryWeb"
+        class="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2"
+      >
+        🌐 Apps Web
+      </h3>
+
+      <!-- Upcoming Projects Grid -->
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- Placeholder Card -->
+        <div
+          class="bg-white dark:bg-gray-800 rounded-[18px] shadow-md border border-dashed border-gray-300 dark:border-gray-600 p-8 text-center"
+        >
+          <div class="text-6xl mb-4">🚧</div>
+          <h4
+            data-i18n="projects.upcoming.title"
+            class="text-xl font-bold text-gray-900 dark:text-white mb-2"
+          >
+            Próximamente
+          </h4>
+          <p
+            data-i18n="projects.upcoming.calcFinance"
+            class="text-gray-600 dark:text-gray-400"
+          >
+            Calculadora Financiera Automotriz (Web App)
+          </p>
+        </div>
+
+        <!-- Another Placeholder -->
+        <div
+          class="bg-white dark:bg-gray-800 rounded-[18px] shadow-md border border-dashed border-gray-300 dark:border-gray-600 p-8 text-center"
+        >
+          <div class="text-6xl mb-4">💡</div>
+          <h4
+            class="text-xl font-bold text-gray-900 dark:text-white mb-2"
+          >
+            <span data-i18n="projects.upcoming.title">Próximamente</span>
+          </h4>
+          <p class="text-gray-600 dark:text-gray-400">
+            Más herramientas en camino...
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
